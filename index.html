@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Type - Word Rush</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">🫧</div>
+                <div>
+                    <h1>Bubble Type</h1>
+                    <p>WORD RUSH CHALLENGE</p>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <button id="restartBtn" class="btn secondary">
+                    ↻ Restart
+                </button>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>TIME</span>
+                <strong id="timer">45</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>WPM</span>
+                <strong id="wpm">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>ACCURACY</span>
+                <strong id="accuracy">100%</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>COMBO</span>
+                <strong id="combo">0x</strong>
+            </div>
+        </section>
+
+        <section class="game-panel">
+
+            <div class="game-info">
+                <span>TYPE THE WORDS BEFORE THEY ESCAPE!</span>
+                <span id="lives">❤️ ❤️ ❤️</span>
+            </div>
+
+            <div id="arena" class="arena">
+
+                <div id="startOverlay" class="overlay">
+                    <div class="dialog">
+                        <div class="dialog-emoji">🫧</div>
+                        <h2>Ready to Pop?</h2>
+                        <p>
+                            Type the words inside the bubbles
+                            and press Enter to pop them.
+                        </p>
+                        <button id="startBtn" class="btn primary">
+                            Start Game
+                        </button>
+                    </div>
+                </div>
+
+                <div id="gameOverOverlay" class="overlay hidden">
+                    <div class="dialog">
+                        <div class="dialog-emoji">🏆</div>
+                        <h2 id="resultTitle">Game Over!</h2>
+                        <p id="resultMessage">Great effort!</p>
+                        <button id="playAgainBtn" class="btn primary">
+                            Play Again
+                        </button>
+                    </div>
+                </div>
+
+                <div id="pauseOverlay" class="overlay hidden">
+                    <div class="dialog">
+                        <div class="dialog-emoji">⏸️</div>
+                        <h2>Game Paused</h2>
+                        <p>Take a breath. Your bubbles are waiting.</p>
+                        <button id="resumeBtn" class="btn primary">
+                            Resume
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="typing-area">
+                <div class="input-wrapper">
+                    <input
+                        type="text"
+                        id="wordInput"
+                        placeholder="Type a bubble word..."
+                        autocomplete="off"
+                        spellcheck="false"
+                        disabled
+                    >
+
+                    <button id="popBtn" class="btn primary" disabled>
+                        POP IT!
+                    </button>
+                </div>
+
+                <p class="hint">
+                    Press ENTER to pop a bubble · ESC to pause
+                </p>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+
+        </section>
+
+        <footer>
+            Improve your typing speed, one bubble at a time! ✨
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
